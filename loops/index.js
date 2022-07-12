@@ -7,15 +7,15 @@
 // }
 
 // let i = 5;
-
 // while ( i >= 0 ) {
-
 //     console.log(i--)
-
 // }
 
-let i = +prompt('Введите число');
 
-do { prompt('Введите число')
-    console.log( i );
-} while (i !== 5)
+// let i;
+
+// do { 
+//     i = +prompt('Введите число');
+// } while (i !== 5)
+
+
