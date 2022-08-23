@@ -1,6 +1,6 @@
 // Создать функцию которая принимает массив футболистов
 // [
-// { name:"Ronaldo", team:"Juventus"}, 
+// { name:"Ronaldo", team:"Juventus"},
 // { name:"Messi", team:"Barcelona"},
 // { name:"Pedro", team:"Chelsea" },
 // { name:"Rico", team:"PSG"},
@@ -66,8 +66,25 @@
 //     }
 // }
 
+// const playersByTeams = players.reduce((teamsObj, item) => {
+//     if (teamsObj[item.team]) {
+//         teamsObj[item.team].push(item);
+//     }  else {
+//         teamsObj[item.team] = [item];
+//     }
+//     return teamsObj;
+// }, {});
 
-// 2. 
+// const playersByTeams = players.reduce((teamsObj, item) => ({
+//     ...teamsObj,
+//     [item.team]: teamsObj[item.team] ? [...teamsObj[item.team], item] : [item]
+// }), {});
+
+// const result = Object.keys(playersByTeams).map((teamName) => playersByTeams[teamName]);
+
+// console.log(result);
+
+// 2.
 // const car = {
 //     model: 'tesla',
 //     adress: {
@@ -149,22 +166,13 @@
 //     }
 // };
 
-
 // const arrCars = [car, car2, car3];
-
-
 
 // 2.1 отфильтровать авто так чтобы в результирующий массив вошли
 // только машины из региона гомель
 // 2.2 просуммировать общую стоимость авто по наивысшей цене
 // 2.3 найти хотя бы одно авто мощность двигателя которого больше 500
 // 2.4 найти самое дешевое авто по наименьшей цене
-
-
-
-
-
-
 
 // 2. Дан случайный массив имен. Выяснить есть ли в этом
 // массиве «Семён» с помощью метода .some().
@@ -197,21 +205,19 @@
 // метода .every() проверить были ли все введенные
 // пользователем данные – числами.
 
-let userNumber = 0;
-let numbersArr = [];
+// let userNumber = 0;
+// let numbersArr = [];
 
-for (let i = 0; i < 10; i++) {
-    numbersArr[i] = prompt('Введите число');
-}
+// for (let i = 0; i < 3; i++) {
+//     numbersArr[i] = prompt('Введите число');
+// }
 
-function isNumber(number) {
-    return !isNaN(number)
-}
+// function isNumber(number) {
+//     return !isNaN(number) && number
+// }
 
-console.log(numbersArr);
-console.log(numbersArr.every(isNumber));
-
-
+// console.log(numbersArr);
+// console.log(numbersArr.every(isNumber));
 
 // 1. Создать объект check с двумя методами:
 // .checkNameLength()
@@ -220,13 +226,13 @@ console.log(numbersArr.every(isNumber));
 // создать два объекта person1 и person2 с полями name и age (задать самостоятельно)
 
 // вызвать методы из объекта check и передать в них в качестве контекста
-// person1 или person2. 
+// person1 или person2.
 // checkNameLength() должен возвращать true если поле name у объекта больше 4
 // checkIsAdult() должен возвращать true если поле объекта age больше или равно 18
 
 // 2. Создать объект person с полем name и методом eat.
 // Создать массив строк food в котором перечисляется любая еда (не менее 4 наименований)
-// Метод eat должен принимать строку food с названием еды и возвращать строку вида 
+// Метод eat должен принимать строку food с названием еды и возвращать строку вида
 // person.name + " eats " + food
 // Используя setTimeout или setInterval запустите метод eat объекта person раз в секунду, передавая при этом каждый раз следующее название еды из массива.
 
@@ -250,6 +256,13 @@ console.log(numbersArr.every(isNumber));
 // document.write( toWash(str, ‘картину’) );
 // // ‘Мама мыла картину’
 
+// let str = "Мама мыла раму";
+
+// function toWash(str, thing) {
+//   return str.split(" ").slice(0, 2).concat([thing]).join(" ");
+// }
+
+// console.log(toWash(str, "рябину"));
 
 // 2.
 // . Взять массив футболистов из задачи 1. Напишите функцию
@@ -258,10 +271,25 @@ console.log(numbersArr.every(isNumber));
 // выводится сообщение (“ИМЯ_ФУТБОЛИСТА is
 // running”)
 
+const players = [
+  { name: "Ronaldo", team: "Juventus" },
+  { name: "Messi", team: "Barcelona" },
+  { name: "Pedro", team: "Chelsea" },
+  { name: "Rico", team: "PSG" },
+  { name: "Suarez", team: "Barcelona" },
+  { name: "Buffon", team: "Juventus" },
+  { name: "Zuma", team: "Chelsea" },
+  { name: "Gonsalo", team: "Juventus" },
+];
 
+function addAbility(array) {
+  for (let i = 0; i < array.length; i++) {
+    array[i].run = function () {
+      return `${this.name} is running`;
+    };
+  }
+}
 
+addAbility(players);
 
-
-
-
-
+console.log(players[0].run());
