@@ -208,12 +208,12 @@
 // let userNumber = 0;
 // let numbersArr = [];
 
-// for (let i = 0; i < 3; i++) {
+// for (let i = 0; i < 10; i++) {
 //     numbersArr[i] = prompt('Введите число');
 // }
 
 // function isNumber(number) {
-//     return !isNaN(number) && number
+//     return !isNaN(number)
 // }
 
 // console.log(numbersArr);
@@ -230,11 +230,53 @@
 // checkNameLength() должен возвращать true если поле name у объекта больше 4
 // checkIsAdult() должен возвращать true если поле объекта age больше или равно 18
 
+// const check = {
+//     checkNameLength() {
+//         return (this.name).length > 4;
+//     },
+//     checkIsAdult() {
+//         return this.age >= 18;
+//     }
+// };
+
+// const person1 = {
+//     name: 'John',
+//     age: 10,
+// };
+
+// const person2 = {
+//     name: 'Michael',
+//     age: 27,
+// };
+
+// console.log(check.checkNameLength.call(person1));
+// console.log(check.checkIsAdult.call(person1));
+// console.log(check.checkNameLength.call(person2));
+// console.log(check.checkIsAdult.call(person2));
+
 // 2. Создать объект person с полем name и методом eat.
 // Создать массив строк food в котором перечисляется любая еда (не менее 4 наименований)
 // Метод eat должен принимать строку food с названием еды и возвращать строку вида
 // person.name + " eats " + food
 // Используя setTimeout или setInterval запустите метод eat объекта person раз в секунду, передавая при этом каждый раз следующее название еды из массива.
+
+// let count = 0;
+// const person = {
+//   name: "John",
+//   eat(eda) {
+//     return `${this.name} eats ${eda[count++]}`;
+//   },
+// };
+
+// const food = ["potato", "kartofel", "bulba", "kartoplia"];
+
+// const id = setInterval(() => {
+//   console.log(person.eat(food));
+// }, 1000);
+
+// setTimeout(() => {
+//   clearInterval(id);
+// }, 4000);
 
 // ==============================================================================
 // Доп задания
@@ -271,25 +313,29 @@
 // выводится сообщение (“ИМЯ_ФУТБОЛИСТА is
 // running”)
 
-const players = [
-  { name: "Ronaldo", team: "Juventus" },
-  { name: "Messi", team: "Barcelona" },
-  { name: "Pedro", team: "Chelsea" },
-  { name: "Rico", team: "PSG" },
-  { name: "Suarez", team: "Barcelona" },
-  { name: "Buffon", team: "Juventus" },
-  { name: "Zuma", team: "Chelsea" },
-  { name: "Gonsalo", team: "Juventus" },
-];
+// const players = [
+//   { name: "Ronaldo", team: "Juventus" },
+//   { name: "Messi", team: "Barcelona" },
+//   { name: "Pedro", team: "Chelsea" },
+//   { name: "Rico", team: "PSG" },
+//   { name: "Suarez", team: "Barcelona" },
+//   { name: "Buffon", team: "Juventus" },
+//   { name: "Zuma", team: "Chelsea" },
+//   { name: "Gonsalo", team: "Juventus" },
+// ];
 
-function addAbility(array) {
-  for (let i = 0; i < array.length; i++) {
-    array[i].run = function () {
-      return `${this.name} is running`;
-    };
-  }
-}
+// const runningPlayers = players.slice();
 
-addAbility(players);
+// function addAbility(array) {
+//   array.forEach((el) => {
+//     el.run = run;
+//   });
+// }
 
-console.log(players[0].run());
+// function run() {
+//   return `${this.name} is running`;
+// }
+
+// addAbility(runningPlayers);
+
+// console.log(runningPlayers[3].run());
