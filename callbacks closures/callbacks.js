@@ -123,35 +123,35 @@
 //     return add(a,b);
 // }
 
-function wrapWithLogger (add) {
+// function wrapWithLogger (add) {
 
-    return function (...args) {
-        console.log(...args);
-        return add(...args);
-    };
-};
+//     return function (...args) {
+//         console.log(...args);
+//         return add(...args);
+//     };
+// };
 
-function sub (a, b) {
-    return a - b;
-}
+// function sub (a, b) {
+//     return a - b;
+// }
 
-function replaceLast (arr, str, length) {
-    arr.pop()
-    arr.push(str);
-    arr.length = length;
-    return arr;
-}
+// function replaceLast (arr, str, length) {
+//     arr.pop()
+//     arr.push(str);
+//     arr.length = length;
+//     return arr;
+// }
 
-const addLogger = wrapWithLogger(add);
-const subLogger = wrapWithLogger(sub);
-const replaceLastLogger = wrapWithLogger(replaceLast)
+// const addLogger = wrapWithLogger(add);
+// const subLogger = wrapWithLogger(sub);
+// const replaceLastLogger = wrapWithLogger(replaceLast)
 
-// console.log(addLogger(2,3));
+// // console.log(addLogger(2,3));
 
 
 
-console.log(replaceLastLogger(['a', 'b', 'c'], 'd', 20));
+// console.log(replaceLastLogger(['a', 'b', 'c'], 'd', 20));
 
-console.log(replaceLast(['x', 'c', 'n'], 'u', 10));
+// console.log(replaceLast(['x', 'c', 'n'], 'u', 10));
 
 
