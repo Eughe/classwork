@@ -2,14 +2,14 @@
 // которая при вызове чередует возвращаемые булевы
 // значения (true, false).
 
-// function toggleMe() {
-//     let a = true;
+// function toggleMeMaker () {
+//     let toggler = true;
 //     return function toggle () {
-//         return a = !a;
+//         return toggler = !toggler;
 //     }
 // }
 
-// let toggler = toggleMe();
+// let toggleMe = toggleMeMaker ();
 
 // console.log(toggler());
 // console.log(toggler());
@@ -23,25 +23,50 @@
 // если передать число больше 10, то функция считает
 // количество от этого числа до 0
 
-// function funcCounter(startNum) {
-//   let counter = 10;
-  
+// function funcCountMaker(startNum) {
+//   let count = 0;
+//   let checkNum = startNum;
 //   return function getCount() {
-    
-//     if ((start === 0)) {
-//       return startNum;
-//     } else if (counter > startNum) {
-//       return startNum++;
-//     } else if (counter < startNum) {
-//       return startNum--;
+
+//     if ((checkNum === 0)) {
+//       return checkNum;
+//     } else if (count < startNum && startNum > 10) {
+//       return checkNum--;
+//     } else if (count < Infinity && startNum < 10) {
+//       return checkNum++;
 //     }
+//     count++;
 //   };
 // }
 
-// let count = funcCounter();
+// let funcCounter = funcCountMaker(6);
 
-// console.log(count(12));
+// console.log(funcCounter());
+// console.log(funcCounter());
+// console.log(funcCounter());
+// console.log(funcCounter());
+// console.log(funcCounter());
 
+/* Преподователь
+
+function countMaker() {
+  let count = 0;
+  let shouldRaise = true;
+
+  return function (num) {
+    if (num) {
+      count = num;
+      shouldRaise = num < 10;
+    }
+
+    if (shouldRaise) {
+      return ++count;
+    } else {
+      return count ? --count : 0;
+    }
+  };
+}
+*/
 
 // 3. Создать функцию classNameEditor(), которая
 // принимает строку с названием класса и добавляет
@@ -62,34 +87,52 @@
 // .split()
 // .join()
 
+// function classNameEditorMaker () {
+//     let className = ' ';
+//     return function (str, add) {
+//         let classArr = className.split(' ');
+//         if (add) {
+//             classArr.push(str);
+//         } else {
+//             classArr.splice(classArr.indexOf(str), 1)
+//         }
+//         className = classArr.join(' ');
+//         return className;
+//     }
+// }
 
-function classNameEditor (str, add) {
-    let className = 'blabla asdasd test';
-    return function () {
-        let classArr = className.split(' ');
-        if (add) { 
-            classArr.push(str);            
-        } else {
-            classArr.splice(classArr.indexOf(str), 1)
-        }
-        className = classArr.join(' ');
-        return className;
-    }
-}
+// let classNameEditor = classNameEditorMaker();
 
-let nameEditor = classNameEditor();
-
-console.log(nameEditor('active', true));
-console.log(nameEditor('test', true));
-console.log(nameEditor('btn', true));
-console.log(nameEditor('test', false));
-
+// console.log(classNameEditor('active', true));
+// console.log(classNameEditor('test', true));
+// console.log(classNameEditor('btn', true));
+// console.log(classNameEditor('test', false));
 
 // 4. Создать функцию, которая принимает массив и callback. Функция
 // должна каждый элемент массива обрабатывать callback’ом.
 
 // arr.map(() => {})
 // map(arr, () => {})
+
+// function arrMap(arr, cb) {
+//     let newArr = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         newArr.push(arr[i]);
+//     } cb(item[i])
+// }
+
+// function addItem(item) {
+//     let arr1 = [];
+//     for () {
+//         if (arr[i] <= 3) {
+//             arr1.push(arr[i]);
+//         }        
+//     }
+//     return arr1;
+// }
+// console.log(arrNew([1,2,3,4,5], addItem));
+
+
 
 // 5. Создать функцию sumTo, которая принимает два числа и callback.
 // Задача функции складывать 2 числа, а задача callback’a заставлять
@@ -100,10 +143,53 @@ console.log(nameEditor('test', false));
 
 // sumTo(2,3, someCallback)
 
+
+// function sumTo(num1, num2, cb) {
+//   let sum = num1 + num2;
+//   return cb(sum);
+// }
+
+// function toString(sum) {
+//   return sum + "";
+// }
+
+// function toNumber(sum) {
+//   return +sum;
+// }
+
+// function toBoolean(sum) {
+//   return !!sum;
+// }
+
+
+// console.log(sumTo(2, 5, toString));
+// console.log(sumTo(2, 5, toNumber));
+// console.log(sumTo(5, -5, toBoolean));
+
+
+
 // 6. Создать функцию checkLogin, которая принимает 4 параметра. 1
 // параметр - это логин, введенный пользователем, 2 –
 // правильный логин, 3 – callback, который вызовется если логин
 // верный, 4 – callback, который вызовется если логин ложный.
+
+// function rightLogin() {
+//     alert('Вход успешно выполнен')
+// };
+
+// function wrongLogin() {
+//     alert('Проверьте введённые данные')
+// };
+
+// function checkLogin(userLogin, login, cb1, cb2) {
+//     if (userLogin === login) {
+//         return cb1();
+//     } else {
+//         return cb2();
+//     }
+// };
+
+// checkLogin(prompt('Введите login'), '12345', rightLogin, wrongLogin);
 
 // 7. Создать объект
 // kurochka = {
