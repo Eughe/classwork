@@ -196,3 +196,48 @@ function countMaker() {
 
 // измените объект так, чтобы после изменения поля isZazharena = true, поле isAlive автоматически стало false,
 // поле isAlive должно быть доступно только для чтения. После изменения isZazharena - это поле должно стать доступно только для чтения
+
+const kurochka = {
+  name: 'Ryaba',
+  isAlive: true,
+  _isZazharena: false
+};
+
+
+Object.defineProperty(kurochka, 'isAlive', {
+  writable: false
+});
+
+Object.defineProperty(kurochka, '_isZazharena', {
+  writable: true,
+  enumerable: false,
+  configurable: false
+});
+
+Object.defineProperty(kurochka, 'isZazharena', {
+  set (val) {
+      if (val && !this._isZazharena) {
+          this._isZazharena = val;
+
+          Object.defineProperty(this, 'isAlive', {
+              writable: true
+          });
+
+          this.isAlive = false;
+
+          Object.defineProperty(this, 'isAlive', {
+              writable: false,
+              configurable: false
+          })
+      }
+  },
+  get () {
+      return this._isZazharena;
+  }
+});
+
+
+kurochka.isZazharena = true;
+kurochka.isAlive = true;
+
+console.log(kurochka);
