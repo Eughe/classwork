@@ -115,22 +115,18 @@ function countMaker() {
 // map(arr, () => {})
 
 // function arrMap(arr, cb) {
-//     let newArr = [];
-//     for (let i = 0; i < arr.length; i++) {
-//         newArr.push(arr[i]);
-//     } cb(item[i])
+//   let newArr = [];
+//   return cb(item);
 // }
 
 // function addItem(item) {
-//     let arr1 = [];
-//     for () {
-//         if (arr[i] <= 3) {
-//             arr1.push(arr[i]);
-//         }        
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i]) {
+//       newArr.push(arr[i]);
 //     }
-//     return arr1;
+//   }
+//   return newArr;
 // }
-// console.log(arrNew([1,2,3,4,5], addItem));
 
 
 
