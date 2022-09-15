@@ -44,11 +44,7 @@
 // const line2 = new Line (point3, point4);
 // const line3 = new Line (point5, point6);
 
-
-
 // console.log(Line.checkTriangle(line1, line2, line3));
-
-
 
 // На этом изображении показано как нужно организовать наследование между классами.
 // Требования:
@@ -58,66 +54,66 @@
 // Все представители этого класса долны иметь метод .startCodingO, который возвращает строку вида 'David is coding using HTML, CSS, JS'.
 // Имя 'David' и названия технологий должны меняться в зависимости оттого, каким объектом был вызван метод.
 // Sportsman должен принимать параметр medals, который характеризует количество медалей у спортсмена.
-// FootballPlayer должен принимать параметр team (строка) с названием команды где играет футболист. 
+// FootballPlayer должен принимать параметр team (строка) с названием команды где играет футболист.
 // Все представители этого класса должны иметь метод .run(speed), где speed это число характеризующее скорость бега.
 //  Метод .run(б) должен возвращать строку вида 'John is running б kmph', где имя 'John' может меняться в зависимости от объекта вызывающего метод ,run().
 // HockeyPlayer должен принимать параметр weight (число) характеризующим массу хоккеиста.
-// Все представители этого класса должны иметь метод .pushOpponent(opponentName), который должен возвращать строку вида 'Bill pushed Brandon and used 123kgs', 
-// имя 'Bill' и количество кг могут меняться в зависимости от объекта запустившего метод. Имя 'Brandon' может меняться в зависимости от opponentName 
+// Все представители этого класса должны иметь метод .pushOpponent(opponentName), который должен возвращать строку вида 'Bill pushed Brandon and used 123kgs',
+// имя 'Bill' и количество кг могут меняться в зависимости от объекта запустившего метод. Имя 'Brandon' может меняться в зависимости от opponentName
 // переданного в момент вызова метода.
 
+// class Human {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   sayHi() {
+//     console.log(`Hi ${this.name}`);
+//   }
+// }
 
-class Human {
-    constructor(name, age) {
-      this.name = name;
-      this.age = age;
-    }
-    sayHi() {
-    console.log(`Hi ${this.userName}`);
-  };
+// class Programmer extends Human {
+//   constructor(technologies, ...args) {
+//     super(...args);
+//     this.technologies = technologies;
+//   }
+//   startCoding() {
+//     console.log(`${this.name} is coding using HTML, CSS, JS`);
+//   }
+// }
 
-class Programmer extends Human {
-  constructor (technologies, ...args) {
-      super(...args);
-      this.technologies = technologies;
-  }
-  startCoding () {
-          console.log((`${this.userName} is coding using HTML, CSS, JS`));
-      };
-};  
+// class Sportsman extends Human {
+//   constructor(medals, ...args) {
+//     super(...args);
+//     this.medals = medals;
+//   }
+// }
 
-class Sportsman extends Human {
-  constructor (medals, ...args) {
-      super(...args);
-      this.medals = medals;
-  }
-};  
+// class FootballPlayer extends Sportsman {
+//   constructor(team, ...args) {
+//     super(...args);
+//     this.team = team;
+//   }
+//   run(speed) {
+//     console.log(`${this.name} is running ${speed} kmph`);
+//   }
+// }
 
-class FootballPlayer extends Sportsman {
-  constructor (team, ...args) {
-      super(...args);
-      this.team = team;
-  }
-  run (speed) {
-          console.log((`${this.userName} is running ${speed} kmph`));
-      };
-};  
+// class HockeyPlayer extends Sportsman {
+//   constructor(weight, ...args) {
+//     super(...args);
+//     this.weight = weight;
+//   }
+//   pushOpponent(opponentName) {
+//     console.log(
+//       `${this.name} pushed ${opponentName} and used ${this.weight} kgs`
+//     );
+//   }
+// }
+// let hockeyPl1 = new HockeyPlayer(110, 25, "Bill", 3);
 
-class HockeyPlayer extends Sportsman {
-  constructor (weight, ...args) {
-      super(...args);
-      this.weight = weight;
-  }
-  pushOpponent(opponentName) {
-          console.log((`${this.userName} pushed ${opponentName} and used ${this.weight} kgs`));
-      };
-};  
-let hockeyPl1 = new HockeyPlayer ('Bill', 25, 3, 110, 'John');
-
-console.log(hockeyPl1)
-
-
-
+// console.log(hockeyPl1.pushOpponent('John'));
+// console.log(hockeyPl1);
 
 // Создать класс Battery, который инициализирует поля type,
 // energy (заряд, по умолчанию 100). Создать класс Device,
