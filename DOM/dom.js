@@ -1,98 +1,70 @@
-// Document
-// Object
-// Model
+// const wrapper = document.getElementById('wrapper');
+// const list = document.getElementById('list');
+// const firstItem = document.getElementById('fItem');
+// const pItem = document.getElementById('pItem');
 
-// console.log(document.body);
-// console.log(h1.nextElementSubling);
-// console.log(h1.previousElementSubling);
-// console.log(h1.parentElement);
-
-// const ul = document.getElementById('list');
-// const lis = ul.getElementsByTagName('li');
-// Array.from(lis);
-
-// const lis = document.getElementsByClassName('item');
-// console.log(lis);
-
-
-// const ol = document.getElementById('test');
-// const items = ol.getElementsByClassName('item');
-// console.log(items);
-
-// const lis = document.querySelector('#list > li:not(.item)');
-
-// const btn = document.getElementById('btn');
-// btn.addEventListener('click', function () {
-//     console.log('Hi there');
+// wrapper.addEventListener('click', () =>{
+//     console.log('wrapper');
 // });
-
-// const onBtnClick = function () {
-//     console.log('Hi there again');
+// list.addEventListener('click', () =>{
+//     console.log('list');
+// });
+// const liListener = () => {
+//     console.log('LI');
 // }
 
-// btn.addEventListener('click', onBtnClick);
+// firstItem.addEventListener('click', liListener);
+// firstItem.addEventListener('click', liListener, true);
 
-// btn.removeEventListener('click', onBtnClick);
-
-// const chtotoRemove = function () {
-//     btn.removeEventListener('click', chtoto);
-// };
-
-// const chtoto = function () {
-//         console.log('chtoto');
-//         chtotoRemove();
-// };
-
-
-// btn.addEventListener('click', chtoto);
-
-
-// const btn = document.getElementById('btn');
-// btn.addEventListener('click', (event) => {
-//     console.log(event);
+// pItem.addEventListener('click', () =>{
+//     console.log('p');
 // });
 
-// const input = document.getElementById('input');
+// pItem.innerText = <h1>Hello</h1>;
 
-// input.addEventListener('keydown', function (event) {
-//     console.log(event);
+// const pItem = document.getElementById('pItem');
+
+// pItem.addEventListener('click', () =>{
+//         pItem.setAttribute('wasClicked', 'true');
+//         pItem.getAttribute('wasClicked');
+//         const pItemCopy = pItem.cloneNode();
+//});
+// pItem.dataset.smth = 'qweqwe';
+   
+// pItem.remove();
+
+
+// const pItem = document.getElementById('pItem');
+// const list = document.getElementById('list');
+// const bratik = list.getElementsByTagName('li')[2];
+
+// list.addEventListener('click', () =>{
+//     const newLi = document.createElement('li');
+//     newLi.innerText = 'some text here';
+
+//     list.append(newLi);
+//     list.prepend(newLi);
+//     list.insertAdjacentElement('beforebegin', newLi);
+
+//     list.insertAdjacentHTML('afterend', '<h1>Header</h1>');
+//     list.insertAdjacentText('afterbegin', '<h1>Header</h1>');
 // });
 
-// const link = document.getElementById('a');
-
-// link.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     console.log('link click');
-// });
-
-// window.addEventListener('contextmenu', (event) =>{
-//     event.preventDefault();
-// });
 
 
 // const list = document.getElementById('list');
-// const lis = [...list.getElementsByTagName('li')];
-
-// function onliClick({target}) {
-//     console.log(target);
-// };
-
-// // lis.forEach((li) => li.addEventListener('click', onliClick));
-// list.addEventListener('click', onliClick);
 
 
-const btn1 = document.getElementById('btn1');
-const btn2 = document.getElementById('btn2');
-const btn3 = document.getElementById('btn3');
+// list.addEventListener('click', () =>{
+//     const item3 = list.getElementsByTagName('li')[2];
+//     list.append(item3.cloneNode(true));
+// });
 
-const clickBoom = function () {
-    console.log('BOOM!');
-};
 
-const clickOk = function () {
-    console.log('OK');
-};
+const pItem = document.getElementById('pItem');
+const list = document.getElementById('list');
 
-btn.addEventListener('click', (event) => {
-    console.log(event);
+pItem.addEventListener('click', () =>{
+    pItem.style.backgroundColor = 'red';
+  
 });
