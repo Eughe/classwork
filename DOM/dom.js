@@ -61,10 +61,14 @@
 // });
 
 
-const pItem = document.getElementById('pItem');
-const list = document.getElementById('list');
+// const pItem = document.getElementById('pItem');
+// const list = document.getElementById('list');
 
-pItem.addEventListener('click', () =>{
-    pItem.style.backgroundColor = 'red';
-  
-});
+// pItem.addEventListener('click', () =>{
+  // pItem.style.backgroundColor = 'red';
+
+//   pItem.classList.add('active');
+//   pItem.classList.remove('two');
+//   pItem.classList.replace('one', 'blabla');
+//   pItem.classList.toggle('active');
+// });
